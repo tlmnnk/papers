@@ -1,0 +1,33 @@
+<div class="item" *ngIf="user">
+  <div class="left" (click)="openDialog()">
+    <div class="image">
+      <img [src]="imageUrl" alt="avatar">
+    </div>
+  
+    <div class="name mat-body-1">{{ user.fname }} {{ user.name | slice:0:1 }}. {{ user.mname | slice:0:1 }}.</div>
+    <div class="mat-body-1">Баланс: {{ user.balance | balance }}</div>
+  </div>
+
+  <div class="right">
+    <span class="last-change" (click)="openDialog()">Последнее изменение: {{ user.lastUpdatedAt | timeAgo }} назад</span>
+    <button class="button-sub" mat-button [matMenuTriggerFor]="menu">
+      <ng-container [ngSwitch]="user.status">
+        <ng-container *ngSwitchCase="0">Подписка активна</ng-container>
+        <ng-container *ngSwitchCase="1">Приостановлена</ng-container>
+        <ng-container *ngSwitchCase="2">Заблокирован</ng-container>
+        <ng-container *ngSwitchDefault>Не известен</ng-container>
+      </ng-container>
+
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+<mat-menu #menu="matMenu">
+  <div class="menu">
+    <span class="mat-body-1 menu-item" [class.active]="user?.status === 1">Приостановлена</span>
+    <span class="mat-body-1 menu-item" [class.active]="user?.status === 0">Подписка активна</span>
+    <span class="mat-body-1 menu-item" [class.active]="user?.status === 2">Заблокирован</span>
+  </div>
+</mat-menu>

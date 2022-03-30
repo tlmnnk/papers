@@ -1,0 +1,21 @@
+<ng-container *ngIf="usersStatus$ | async as requestStatus">
+  <mat-tab-group disableRipple (selectedTabChange)="tabChange($event)">
+    <mat-tab [disabled]="requestStatus === 'pending'" label="Все" ></mat-tab>
+    <mat-tab [disabled]="requestStatus === 'pending'" label="Заблокированные"></mat-tab>
+    <mat-tab [disabled]="requestStatus === 'pending'" label="Активные"></mat-tab>
+  </mat-tab-group>
+
+  <div class="users">
+    <ng-container *ngIf="requestStatus !== 'pending'; else showLoader">
+      <app-user-list-item
+        *ngFor="let user of users$ | async"
+        [user]="user"
+      ></app-user-list-item>
+    </ng-container>
+  </div>
+</ng-container>
+
+
+<ng-template #showLoader>
+  <app-loader></app-loader>
+</ng-template>

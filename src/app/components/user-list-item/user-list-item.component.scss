@@ -1,0 +1,72 @@
+@import '../../scss/colors.scss';
+
+.item {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  border-radius: 4px;
+}
+
+.left {
+  cursor: pointer;
+}
+
+.right {
+  justify-content: space-between;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  margin-right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: $accent;
+  
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.name {
+  margin-right: 20px;
+  width: 170px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.last-change {
+  margin-right: 38px;
+  height: 48px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  color: $last-change;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-sub {
+  color: $grey;
+  width: 180px;
+}
+.menu {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.menu-item {
+  color: $grey75;
+}
+.active {
+  color: $grey;
+}

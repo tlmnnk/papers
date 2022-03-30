@@ -1,0 +1,9 @@
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+@each $space in $spaceamounts {
+  .m-#{$space} {
+      margin: #{$space}px !important;
+  }
+  .p-#{$space} {
+      padding: #{$space}px !important;
+  }
+}

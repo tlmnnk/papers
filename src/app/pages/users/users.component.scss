@@ -1,0 +1,17 @@
+@import '../../scss/colors.scss';
+
+:host {
+  display: block;
+  height: 100%;
+  min-height: 100vh;
+  background-color: $background;
+}
+
+.users {
+  margin: 0 auto;
+  padding: 48px 48px;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}

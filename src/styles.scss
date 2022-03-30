@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import '../src/app/scss/mat-tabs.scss';
+@import '../src/app/scss/mat-form-field.scss';
+@import '../src/app/scss/mat-dialog.scss';
+@import '../src/app/scss/mixins.scss';
+@import '../src/app/scss/mat-select.scss';
+@import '../src/app/scss/mat-snackbar.scss';
+
+$accent: #6979F8;
+$warn: #FF647C;
+
+$papers-primary: mat.define-palette(mat.$indigo-palette);
+$papers-accent: mat.define-palette(mat.$indigo-palette);
+$papers-warn: mat.define-palette(mat.$indigo-palette);
+
+$papers-theme: mat.define-light-theme((
+  color: (
+    primary: $papers-primary,
+    accent: $papers-accent,
+    warn: $papers-warn,
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Inter, sans-serif',
+    $headline: mat.define-typography-level(28px, 32px, normal),
+
+    $title: mat.define-typography-level(34px, 41px,  700),
+
+    $subheading-1: mat.define-typography-level(14px, 16px, bold),
+    $subheading-2: mat.define-typography-level(14px, 16px, normal),
+    $display-1: mat.define-typography-level(15px, 14px, normal),
+    $display-2: mat.define-typography-level(14px, 36px, norma),
+
+    $body-1: mat.define-typography-level(15px, 20px, 400),
+
+    $body-2: mat.define-typography-level(14px, 20px, normal),
+    $button: mat.define-typography-level(14px, 32px, normal),
+    $caption: mat.define-typography-level(12px, 20px, normal),
+  )
+));
+
+@include mat.core($papers-theme);
+
+@include mat.all-component-themes($papers-theme);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}

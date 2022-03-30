@@ -1,0 +1,40 @@
+@import './colors.scss';
+
+.mat-tab-list  {
+  margin: 0 auto;
+  padding: 0 48px;
+  max-width: 1440px;
+}
+
+.mat-tab-group {
+  height: 48px !important;
+  background-color: $white;
+}
+
+.mat-tab-header {
+  border-bottom: none !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+}
+
+[role=tab] {
+  min-width: 0 !important;
+}
+
+.mat-ink-bar {
+  height: 3px !important;
+  background-color: $accent !important;
+  border-radius: 200px 200px 0px 0px;
+}
+
+.mat-tab-label {
+  color: $grey75 !important;
+  opacity: 1 !important;
+}
+
+.mat-tab-label-active {
+  color: $dark !important;
+}
+
+.mat-tab-label.mat-tab-disabled {
+  cursor: not-allowed !important;
+}

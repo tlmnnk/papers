@@ -1,0 +1,10 @@
+@import './colors.scss';
+
+.mat-option {
+  color: $grey75 !important;
+}
+
+.mat-active {
+  color: $grey !important;
+  background: none !important;
+}

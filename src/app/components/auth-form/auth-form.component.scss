@@ -1,0 +1,21 @@
+@import '../../scss/colors.scss';
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.enter-btn {
+  height: 48px;
+  background-color: $accent;
+}
+
+.eye {
+  color: $accent;
+}

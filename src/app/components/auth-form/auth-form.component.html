@@ -1,0 +1,25 @@
+<form class="form" [formGroup]="authForm" (submit)="onSubmit($event)">
+  <mat-form-field appearance="outline" type="text" placeholder="Login">
+    <input matInput formControlName="login">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" placeholder="password">
+    <input
+      matInput
+      formControlName="password"
+      [type]="hide ? 'password' : 'text'"
+      >
+      <button
+        matSuffix
+        mat-icon-button
+        (click)="hide = !hide"
+        [attr.aria-pressed]="hide"
+        [attr.aria-label]="'Hide password'"
+        type="button"
+        >
+          <mat-icon class="eye">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit" class="enter-btn">ВОЙТИ</button>
+</form>

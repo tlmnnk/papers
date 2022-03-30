@@ -1,0 +1,39 @@
+<div class="modal">
+  <div class="header">
+    <div class="mat-title" style="margin:0">{{ data.fname }} {{ data.name }}</div>
+
+    <div class="close" (click)="close()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+        <path d="M30.8859 11.1141C30.0668 10.2953 28.7391 10.2953 27.9201 11.1141L21.0131 18.0211L14.1062 11.1141C13.2832 10.3192 11.975 10.3306 11.1659 11.1397C10.3569 11.9487 10.3455 13.2569 11.1404 14.0799L18.0473 20.9869L11.1404 27.8938C10.5951 28.4204 10.3765 29.2003 10.5684 29.9336C10.7604 30.6669 11.3331 31.2396 12.0664 31.4316C12.7997 31.6235 13.5796 31.4049 14.1062 30.8596L21.0131 23.9527L27.9201 30.8596C28.7431 31.6545 30.0513 31.6431 30.8603 30.8341C31.6694 30.025 31.6808 28.7168 30.8859 27.8938L23.9789 20.9869L30.8859 14.0799C31.7047 13.2609 31.7047 11.9332 30.8859 11.1141Z" fill="#6979F8"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="inner">
+    <form [formGroup]="userForm" class="form">
+      <mat-form-field appearance="outline" type="text">
+        <input matInput formControlName="fname">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" type="text">
+        <input matInput formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" type="text">
+        <input matInput formControlName="mname">
+      </mat-form-field>
+  
+      <div class="select">
+        <mat-form-field appearance="outline" type="text">
+          <mat-select formControlName="status" disableOptionCentering>
+            <mat-option [value]="1">Приостановлена</mat-option>
+            <mat-option [value]="0">Подписка активна</mat-option>
+            <mat-option [value]="2">Заблокирован</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  
+    <button (click)="save()" class="save-btn" mat-raised-button color="primary">Сохранить</button>
+  </div>
+</div>

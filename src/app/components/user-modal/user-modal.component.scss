@@ -1,0 +1,58 @@
+@import '../../scss/colors.scss';
+
+$inputWidth: 240px;
+$shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+:host {
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.header {
+  padding: 22px 34px 19px;
+  padding-bottom: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $grey25;
+}
+
+.close {
+  color: $accent;
+  cursor: pointer;
+}
+
+.inner {
+  padding: 34px;
+}
+
+.form {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  & mat-form-field {
+    width: $inputWidth;
+    filter: $shadow;
+  }
+}
+
+.select {
+  flex-basis: 100%;
+
+  & mat-form-field {
+    width: $inputWidth;
+    filter: $shadow;
+  }
+}
+
+.save-btn {
+  height: 48px;
+  width: 240px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background-color: $accent;
+  filter: $shadow;
+}
